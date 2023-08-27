@@ -2,7 +2,7 @@ import React from 'react';
 import Table from './Table';
 import Title from './Title';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MarkModal from './MarkModal';
+import MarkModal from './Modal';
 import Mark from './Mark';
 
 function App() {

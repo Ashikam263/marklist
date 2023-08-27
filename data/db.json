@@ -1,86 +1,86 @@
 {
     "data": [
       {
-        "name": "roshna",
+        "name": "john",
         "id": 1
       },
       {
-        "name": "parvathi",
+        "name": "mary",
         "id": 2
       },
       {
-        "name": "navya",
+        "name": "sally",
         "id": 3
       },
       {
-        "name": "shilpa",
+        "name": "peter",
         "id": 4
       }
     ],
     "mark": [
       {
-        "subject": "geology",
-        "int1": 20,
-        "int2": 21,
-        "ext": 20,
+        "subject": "maths",
+        "internal1": 18,
+        "internal2": 18,
+        "external": 18,
         "mark_id": 1,
         "id": "Y-vEEbM"
       },
       {
-        "subject": "fisheries",
-        "int1": 20,
-        "int2": 20,
-        "ext": 20,
+        "subject": "science",
+        "internal1": 20,
+        "internal2": 20,
+        "external": 20,
         "mark_id": 1,
         "id": "gcdvGxw"
       },
       {
-        "subject": "aquaculture",
-        "int1": 25,
-        "int2": 25,
-        "ext": 50,
+        "subject": "english",
+        "internal1": 25,
+        "internal2": 25,
+        "external": 25,
         "mark_id": 1,
         "id": "2Pa5YjN"
       },
       {
-        "subject": "malayalam",
-        "int1": 20,
-        "int2": 22,
-        "ext": 50,
+        "subject": "history",
+        "internal1": 20,
+        "internal2": 22,
+        "external": 35,
         "mark_id": 2,
         "id": "hsYXcFR"
       },
       {
-        "subject": "future studies",
-        "int1": 20,
-        "int2": 20,
-        "ext": 50,
+        "subject": "geography",
+        "internal1": 20,
+        "internal2": 20,
+        "external": 50,
         "mark_id": 2,
         "id": "qT3WEcZ"
       },
       {
-        "subject": "social",
-        "int1": 5,
-        "int2": 6,
-        "ext": 20,
+        "subject": "programming",
+        "internal1": 15,
+        "internal2": 16,
+        "external": 40,
         "mark_id": 1,
         "id": "N_rH4oZ"
       },
       {
-        "subject": "science",
-        "int1": 20,
-        "int2": 20,
-        "ext": 50,
+        "subject": "art",
+        "internal1": 20,
+        "internal2": 20,
+        "external": 50,
         "mark_id": 3,
         "id": "XC5h1-T"
       },
       {
-        "subject": "geograpy",
-        "int1": 25,
-        "int2": 25,
-        "ext": 50,
+        "subject": "music",
+        "internal1": 25,
+        "internal2": 25,
+        "external": 50,
         "mark_id": 4,
         "id": "qLzkhNE"
       }
     ]
-  }  
+  }

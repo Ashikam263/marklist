@@ -1,34 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Title from "./Title";
 
 const Table = () => {
   const [data, setData] = useState(null);
   const [name, setName] = useState("");
-
-  useEffect(() => {
-    fetch("https://my-json-server.typicode.com/roshna-roland/Task_8_Json/data")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (name === "") {
+      setError("Please enter a name.");
+      return;
+    }
     const data = { name };
-    fetch("https://my-json-server.typicode.com/roshna-roland/Task_8_Json/data", {
+    fetch("", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     })
       .then(() => {
-        console.log("new name added");
+        setError(null);
+        setData(null);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -47,7 +43,7 @@ const Table = () => {
   return (
     <div className="main">
       {toAddTitle() && <Title title="No Students Added" />}
-      <form className="inputss" onSubmit={handleSubmit}>
+      <form className="inputs" onSubmit={handleSubmit}>
         <input
           type="text"
           required
@@ -57,6 +53,7 @@ const Table = () => {
             setName(e.target.value);
           }}
         />
+        {error && <p>{error}</p>}
         <button>Add</button>
       </form>
 
@@ -68,7 +65,7 @@ const Table = () => {
                 <tr key={key}>
                   <td>{data.id}</td>
                   <td>{data.name}</td>
-                  <td className="viewmarks"><Link to={`/Mark/${data.id}`}><button>view marks</button></Link></td>
+                  <td className="viewmarks"><Link to={`/Mark/${data.id}`}><button>View marks</button></Link></td>
                 </tr>
               ))}
             </tbody>

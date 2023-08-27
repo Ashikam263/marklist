@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MarkModal from "./MarkModal";
+import MarkModal from "./Modal";
 import Title from "./Title";
 
 const Mark = () => {
@@ -10,7 +10,7 @@ const Mark = () => {
   var CGPA = 0;
 
   useEffect(() => {
-    fetch("http://localhost:8000/mark")
+    fetch("")
       .then((res) => res.json())
       .then((mark) => {
         const new_mark = mark.filter((mark) => mark.mark_id === id);
@@ -46,10 +46,10 @@ const Mark = () => {
     if (mark !== null) {
       mark.map((mark, key) => {
         // var Key =parseInt(mark.key);
-        var fir = mark.int1;
-        var sec = mark.int2;
-        var exter = mark.ext;
-        var Total = (parseInt(mark.ext) + parseInt(mark.int1) + parseInt(mark.int2)) / 100;
+        var First = mark.internal1;
+        var Second = mark.internal2;
+        var External = mark.external;
+        var Total = (parseInt(mark.external) + parseInt(mark.internal1) + parseInt(mark.internal2)) / 100;
         grandTotal += Total;
         CGPA = grandTotal / (key + 1);
       });
@@ -61,7 +61,7 @@ const Mark = () => {
     <div className="main">
       {toAddTitle() && <Title title="No Marks Added" />}
 
-      <form className="inputss">
+      <form className="details">
         <MarkModal />
       </form>
 
@@ -82,10 +82,10 @@ const Mark = () => {
               <tr key={key}>
                 <td>{key + 1}</td>
                 <td>{mark.subject}</td>
-                <td>{parseInt(mark.int1)}</td>
-                <td>{parseInt(mark.int2)}</td>
-                <td>{parseInt(mark.ext)}</td>
-                <td>{parseInt(mark.ext) + parseInt(mark.int1) + parseInt(mark.int2)}</td>
+                <td>{parseInt(mark.internal1)}</td>
+                <td>{parseInt(mark.internal2)}</td>
+                <td>{parseInt(mark.external)}</td>
+                <td>{parseInt(mark.external) + parseInt(mark.internal1) + parseInt(mark.internal2)}</td>
               </tr>
             ))}
             <tr>

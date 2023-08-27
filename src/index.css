@@ -2,7 +2,13 @@
   justify-content: center;
 }
 
-.inputss {
+.title{
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.details {
   display: flex;
   justify-content: flex-end;
   margin-top: 50px;
@@ -60,4 +66,17 @@ td.viewmarks {
   display: flex;
   width: 100%;
   margin: 10px 0;
+}
+
+Modal .style {
+  position: "absolute";
+  top: "40%";
+  left: "50%";
+  height: 400;
+  transform: "translate(-50%, -50%)";
+  width: 400;
+  background-color: "background.paper";
+  border: "2px solid #000";
+  Offset: 24;
+  padding: 4
 }

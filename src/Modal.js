@@ -11,28 +11,15 @@ const MarkModal = () => {
   const mark_id = id;
 
   const [subject, setSubject] = useState("");
-  const [int1, setint1] = useState("");
-  const [int2, setint2] = useState("");
-  const [ext, setext] = useState("");
-
-  const style = {
-    position: "absolute",
-    top: "40%",
-    left: "50%",
-    height: 400,
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+  const [internal1, setinternal1] = useState("");
+  const [internal2, setinternal2] = useState("");
+  const [external, setexternal] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const Mark = { subject, int1, int2, ext, mark_id };
+    const Mark = { subject, internal1, internal2, external, mark_id };
 
-    fetch("https://my-json-server.typicode.com/roshna-roland/Task_8_Json/mark", {
+    fetch("", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Mark)
@@ -52,7 +39,7 @@ const MarkModal = () => {
       <Modal
         onClose={handleClose}
         open={open}
-        sx={style}
+        className= "style"
       >
         <div>
           <div className="modal-header">
@@ -75,8 +62,8 @@ const MarkModal = () => {
                 <input
                   type="number"
                   className="form-control"
-                  value={int1}
-                  onChange={(e) => setint1(e.target.value)}
+                  value={internal1}
+                  onChange={(e) => setinternal1(e.target.value)}
                   required
                 />
               </div>
@@ -85,8 +72,8 @@ const MarkModal = () => {
                 <input
                   type="number"
                   className="form-control"
-                  value={int2}
-                  onChange={(e) => setint2(e.target.value)}
+                  value={internal2}
+                  onChange={(e) => setinternal2(e.target.value)}
                   required
                 />
               </div>
@@ -95,8 +82,8 @@ const MarkModal = () => {
                 <input
                   type="number"
                   className="form-control"
-                  value={ext}
-                  onChange={(e) => setext(e.target.value)}
+                  value={external}
+                  onChange={(e) => setexternal(e.target.value)}
                   required
                 />
               </div>
