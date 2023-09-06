@@ -2,7 +2,7 @@ import React from 'react';
 import Table from './Table';
 import Title from './Title';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MarkModal from './Modal';
+import MarkModal from './MarkModal';
 import Mark from './Mark';
 
 function App() {
@@ -11,17 +11,17 @@ function App() {
       <div className="App">
         <Title />
         <Routes>
-          <Route path="/table">
-            <React.Fragment>
+          <Route path="/table" element={
               <Table />
-            </React.Fragment>
+              // <div>Hello wolrd</div>
+          }>
           </Route>
-          <Route path="/Mark/:id">
+          <Route path="/Mark/:id" element={
             <Mark />
-          </Route>
-          <Route path="/Modal">
+          }/>
+          <Route path="/Modal" element={
             <MarkModal />
-          </Route>
+          }/>
         </Routes>
       </div>
     </BrowserRouter>

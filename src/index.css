@@ -15,6 +15,13 @@
   margin-right: 20%;
 }
 
+.inputs {
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  padding-bottom: 8px;
+}
+
 button {
   background-color: rgba(74, 73, 68, 0.44);
   border: none;
@@ -77,6 +84,6 @@ Modal .style {
   width: 400;
   background-color: "background.paper";
   border: "2px solid #000";
-  Offset: 24;
+  box-shadow: 10px 20px 10px #000;
   padding: 4
 }

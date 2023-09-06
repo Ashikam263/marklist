@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Title from "./Title";
 
@@ -8,24 +8,19 @@ const Table = () => {
   const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
+    setName("");
     e.preventDefault();
     if (name === "") {
       setError("Please enter a name.");
       return;
     }
-    const data = { name };
-    fetch("", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(() => {
-        setError(null);
-        setData(null);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    // console.log(data)
+    const body = [...data, {"name" : name, "id": data.length + 1}]
+    setData(body);
+    // localStorage.setItem("key", btoa(JSON.stringify(body)))
+    localStorage.setItem("key", JSON.stringify(body))
+
+    
   };
 
   const toAddTitle = () => {
@@ -40,10 +35,28 @@ const Table = () => {
     }
   };
 
+  useEffect(() => {
+    const temp = localStorage.getItem("key");
+    if (temp != null) {
+      setData(JSON.parse(temp));
+      // setData(JSON.parse(atob(temp)));
+
+    } else {
+      fetch("http://localhost:8000/data")
+      .then((res) => res.json())
+      .then((data) => {
+        // localStorage.setItem("key", btoa(JSON.stringify(data)))
+        localStorage.setItem("key", JSON.stringify(data))
+
+        setData(data);
+      });
+    }
+  }, []);
+
   return (
     <div className="main">
       {toAddTitle() && <Title title="No Students Added" />}
-      <form className="inputs" onSubmit={handleSubmit}>
+      <form className="inputs">
         <input
           type="text"
           required
@@ -54,7 +67,7 @@ const Table = () => {
           }}
         />
         {error && <p>{error}</p>}
-        <button>Add</button>
+        <button onClick={handleSubmit}>Add</button>
       </form>
 
       <div className="tableHandle">

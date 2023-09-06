@@ -3,7 +3,7 @@ import { useState } from "react";
 import Modal from '@mui/material/Modal';
 import { useParams } from "react-router-dom";
 
-const MarkModal = () => {
+const MarkModal = ({ mark, setMark }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
@@ -18,19 +18,14 @@ const MarkModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const Mark = { subject, internal1, internal2, external, mark_id };
-
-    fetch("", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Mark)
-    })
-      .then(() => {
-        console.log("new marks added");
-        console.log(Mark);
-      })
-      .then(() => {
-        handleClose();
-      });
+    const cache = JSON.parse(localStorage.getItem("total-marks"))
+    
+    if (cache != null) {
+      localStorage.setItem("total-marks", JSON.stringify([...cache, Mark]));
+    }
+    localStorage.setItem("total-marks", JSON.stringify([...cache, Mark]));
+    setMark([...mark, Mark])
+    handleClose()
   };
 
   return (

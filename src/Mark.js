@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MarkModal from "./Modal";
+import MarkModal from "./MarkModal";
 import Title from "./Title";
 
 const Mark = () => {
@@ -10,13 +10,29 @@ const Mark = () => {
   var CGPA = 0;
 
   useEffect(() => {
-    fetch("")
+    const temp = localStorage.getItem("total-marks");
+    if (temp != null) {
+      const new_mark = JSON.parse(temp).filter((m) => parseInt(m.mark_id) === parseInt(id));
+      setMark(new_mark);
+    } else {
+      fetch("http://localhost:8000/mark")
       .then((res) => res.json())
       .then((mark) => {
-        const new_mark = mark.filter((mark) => mark.mark_id === id);
+
+        localStorage.setItem("total-marks", JSON.stringify(mark));
+        const new_mark = mark.filter((m) => parseInt(m.mark_id) === parseInt(id));
         setMark(new_mark);
       });
+    } 
   }, []);
+
+  useEffect(() => {
+    const temp = localStorage.getItem("total-marks");
+    if (temp != null) {
+      const new_mark = JSON.parse(temp).filter((m) => parseInt(m.mark_id) === parseInt(id));
+      setMark(new_mark);
+    }
+  }, [mark])
 
   const toAddTitle = () => {
     if (mark !== null) {
@@ -53,7 +69,7 @@ const Mark = () => {
         grandTotal += Total;
         CGPA = grandTotal / (key + 1);
       });
-      return CGPA * 10;
+      return (CGPA * 10).toFixed(2);
     }
   };
 
@@ -62,7 +78,7 @@ const Mark = () => {
       {toAddTitle() && <Title title="No Marks Added" />}
 
       <form className="details">
-        <MarkModal />
+        <MarkModal mark={mark} setMark={setMark} />
       </form>
 
       {toAddData() && <div className="tableHandle">

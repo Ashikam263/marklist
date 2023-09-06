@@ -1,86 +1,162 @@
 {
-    "data": [
-      {
-        "name": "john",
-        "id": 1
-      },
-      {
-        "name": "mary",
-        "id": 2
-      },
-      {
-        "name": "sally",
-        "id": 3
-      },
-      {
-        "name": "peter",
-        "id": 4
-      }
-    ],
-    "mark": [
-      {
-        "subject": "maths",
-        "internal1": 18,
-        "internal2": 18,
-        "external": 18,
-        "mark_id": 1,
-        "id": "Y-vEEbM"
-      },
-      {
-        "subject": "science",
-        "internal1": 20,
-        "internal2": 20,
-        "external": 20,
-        "mark_id": 1,
-        "id": "gcdvGxw"
-      },
-      {
-        "subject": "english",
-        "internal1": 25,
-        "internal2": 25,
-        "external": 25,
-        "mark_id": 1,
-        "id": "2Pa5YjN"
-      },
-      {
-        "subject": "history",
-        "internal1": 20,
-        "internal2": 22,
-        "external": 35,
-        "mark_id": 2,
-        "id": "hsYXcFR"
-      },
-      {
-        "subject": "geography",
-        "internal1": 20,
-        "internal2": 20,
-        "external": 50,
-        "mark_id": 2,
-        "id": "qT3WEcZ"
-      },
-      {
-        "subject": "programming",
-        "internal1": 15,
-        "internal2": 16,
-        "external": 40,
-        "mark_id": 1,
-        "id": "N_rH4oZ"
-      },
-      {
-        "subject": "art",
-        "internal1": 20,
-        "internal2": 20,
-        "external": 50,
-        "mark_id": 3,
-        "id": "XC5h1-T"
-      },
-      {
-        "subject": "music",
-        "internal1": 25,
-        "internal2": 25,
-        "external": 50,
-        "mark_id": 4,
-        "id": "qLzkhNE"
-      }
-    ]
-  }
+  "data": [
+    {
+      "name": "john",
+      "id": 1
+    },
+    {
+      "name": "mary",
+      "id": 2
+    },
+    {
+      "name": "sally",
+      "id": 3
+    },
+    {
+      "name": "peter",
+      "id": 4
+    },
+    {
+      "name": "tester",
+      "id": 5
+    },
+    {
+      "name": "tester",
+      "id": 6
+    },
+    {
+      "name": "tester",
+      "id": 7
+    },
+    {
+      "name": "tester",
+      "id": 8
+    },
+    {
+      "name": "tesre",
+      "id": 9
+    },
+    {
+      "name": "asdasd",
+      "id": 10
+    },
+    {
+      "name": "asdasd",
+      "id": 11
+    },
+    {
+      "name": "asdasd",
+      "id": 12
+    },
+    {
+      "name": "asdasd",
+      "id": 13
+    },
+    {
+      "name": "asdasd",
+      "id": 14
+    },
+    {
+      "name": "asdas",
+      "id": 15
+    },
+    {
+      "name": "asdas",
+      "id": 16
+    },
+    {
+      "name": "dfsdf",
+      "id": 17
+    }
+  ],
+  "mark": [
+    {
+      "subject": "maths",
+      "internal1": 18,
+      "internal2": 18,
+      "external": 18,
+      "mark_id": 1,
+      "id": "Y-vEEbM"
+    },
+    {
+      "subject": "science",
+      "internal1": 20,
+      "internal2": 20,
+      "external": 20,
+      "mark_id": 1,
+      "id": "gcdvGxw"
+    },
+    {
+      "subject": "english",
+      "internal1": 25,
+      "internal2": 25,
+      "external": 25,
+      "mark_id": 1,
+      "id": "2Pa5YjN"
+    },
+    {
+      "subject": "history",
+      "internal1": 20,
+      "internal2": 22,
+      "external": 35,
+      "mark_id": 2,
+      "id": "hsYXcFR"
+    },
+    {
+      "subject": "geography",
+      "internal1": 20,
+      "internal2": 20,
+      "external": 50,
+      "mark_id": 2,
+      "id": "qT3WEcZ"
+    },
+    {
+      "subject": "programming",
+      "internal1": 15,
+      "internal2": 16,
+      "external": 40,
+      "mark_id": 1,
+      "id": "N_rH4oZ"
+    },
+    {
+      "subject": "art",
+      "internal1": 20,
+      "internal2": 20,
+      "external": 50,
+      "mark_id": 3,
+      "id": "XC5h1-T"
+    },
+    {
+      "subject": "music",
+      "internal1": 25,
+      "internal2": 25,
+      "external": 50,
+      "mark_id": 4,
+      "id": "qLzkhNE"
+    },
+    {
+      "subject": "test",
+      "internal1": "20",
+      "internal2": "20",
+      "external": "30",
+      "mark_id": "1",
+      "id": "8KU9qPx"
+    },
+    {
+      "subject": "Maths",
+      "internal1": "25",
+      "internal2": "25",
+      "external": "40",
+      "mark_id": "6",
+      "id": "GxObpww"
+    },
+    {
+      "subject": "geo",
+      "internal1": "22",
+      "internal2": "23",
+      "external": "24",
+      "mark_id": "3",
+      "id": "7FtZPnf"
+    }
+  ]
+}
