@@ -24,15 +24,15 @@ const Mark = () => {
         setMark(new_mark);
       });
     } 
-  }, []);
+  }, [id]);
 
-  useEffect(() => {
-    const temp = localStorage.getItem("total-marks");
-    if (temp != null) {
-      const new_mark = JSON.parse(temp).filter((m) => parseInt(m.mark_id) === parseInt(id));
-      setMark(new_mark);
-    }
-  }, [mark])
+  // useEffect(() => {
+  //   const temp = localStorage.getItem("total-marks");
+  //   if (temp != null) {
+  //     const new_mark = JSON.parse(temp).filter((m) => parseInt(m.mark_id) === parseInt(id));
+  //     setMark(new_mark);
+  //   }
+  // }, [id])
 
   const toAddTitle = () => {
     if (mark !== null) {
@@ -105,11 +105,11 @@ const Mark = () => {
               </tr>
             ))}
             <tr>
-              <td>cgpa</td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
+              <td>CGPA</td>
               <td>{cgpa(mark)}</td>
             </tr>
           </tbody>

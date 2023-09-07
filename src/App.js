@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <Title />
         <Routes>
-          <Route path="/table" element={
+          <Route path="/" element={
               <Table />
               // <div>Hello wolrd</div>
           }>

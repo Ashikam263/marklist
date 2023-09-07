@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from '@mui/material/Modal';
 import { useParams } from "react-router-dom";
 
@@ -15,6 +15,13 @@ const MarkModal = ({ mark, setMark }) => {
   const [internal2, setinternal2] = useState("");
   const [external, setexternal] = useState("");
 
+  const reset = () => {
+    setSubject("");
+    setinternal1("");
+    setinternal2("");
+    setexternal("");
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const Mark = { subject, internal1, internal2, external, mark_id };
@@ -25,16 +32,17 @@ const MarkModal = ({ mark, setMark }) => {
     }
     localStorage.setItem("total-marks", JSON.stringify([...cache, Mark]));
     setMark([...mark, Mark])
+    reset();
     handleClose()
   };
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>Add Marks</button>
+      <button type="button" className='addmarks' onClick={handleOpen}>Add Marks</button>
       <Modal
         onClose={handleClose}
         open={open}
-        className= "style"
+        className= ""
       >
         <div>
           <div className="modal-header">
