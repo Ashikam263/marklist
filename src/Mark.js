@@ -15,7 +15,7 @@ const Mark = () => {
       const new_mark = JSON.parse(temp).filter((m) => parseInt(m.mark_id) === parseInt(id));
       setMark(new_mark);
     } else {
-      fetch("http://localhost:8000/mark")
+      fetch("https://my-json-server.typicode.com/Ashikam263/marklist/mark")
       .then((res) => res.json())
       .then((mark) => {
 
