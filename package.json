@@ -1,6 +1,7 @@
 {
   "name": "marklist",
   "version": "0.1.0",
+  "homepage": "https://ashikam263.github.io/marklist/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -18,6 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start2": "webpack-dev-server --mode development",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,7 +46,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
-  },
-  "homepage": "https://ashikam263.github.io/marklist/"
+    "gh-pages": "^6.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
 }

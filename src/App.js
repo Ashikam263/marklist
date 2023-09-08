@@ -7,7 +7,7 @@ import Mark from './Mark';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <div className="App">
         <Title />
         <Routes>
