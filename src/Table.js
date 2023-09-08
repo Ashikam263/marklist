@@ -42,7 +42,7 @@ const Table = () => {
       // setData(JSON.parse(atob(temp)));
 
     } else {
-      fetch("http://localhost:8000/data")
+      fetch("https://my-json-server.typicode.com/Ashikam263/marklist/data")
       .then((res) => res.json())
       .then((data) => {
         // localStorage.setItem("key", btoa(JSON.stringify(data)))
