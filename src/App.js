@@ -11,15 +11,15 @@ function App() {
       <div className="App">
         <Title />
         <Routes>
-          <Route path="/" element={
+          <Route exact path="/marklist/" element={
               <Table />
               // <div>Hello wolrd</div>
           }>
           </Route>
-          <Route path="/Mark/:id" element={
+          <Route exact path="/marklist/Mark/:id" element={
             <Mark />
           }/>
-          <Route path="/Modal" element={
+          <Route exact path="/marklist/Modal" element={
             <MarkModal />
           }/>
         </Routes>
